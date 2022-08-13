@@ -1,7 +1,3 @@
-# Table of contents
-
-[[_TOC]]
-
 # Introduction
 A tool to be used in CI/CD pipeline job, in which it will update a tag to a Swarmpit service.
 

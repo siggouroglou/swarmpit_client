@@ -6,9 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased]
+
+## [1.0.0]
 ### Added
 - sources added
 
 
 
-[Unreleased]: https://github.com/siggouroglou/swarmpit_client-/compare/...develop
+[Unreleased]: https://github.com/siggouroglou/swarmpit_client-/compare/1.0.0...develop
+
+[1.0.0]: https://github.com/siggouroglou/swarmpit_client-/compare/0.0.0...1.0.0
