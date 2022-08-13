@@ -50,7 +50,12 @@ class SwarmpitAPIClient:
             service[key] = value
         del service["deployment"]["forceUpdate"]
         del service["deployment"]["rollbackAllowed"]
-        # service["version"] = int(service["version"]) + 1
+        mounts = []
+        for m in service["mounts"]:
+            del m["id"]
+            del m["volumeOptions"]
+            del m["stack"]
+        service["mounts"] = mounts
 
         # Update the service in swarmpit
         headers = {
