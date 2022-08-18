@@ -1,3 +1,33 @@
-.idea
+# Byte-compiled / optimized / DLL files
+otrscli/__pycache__/
+otrscli.egg-info
+*.py[cod]
+.python-version
+
+# Distribution / packaging
+build/
+dist/
+opencve.egg-info/
+
+# Environments
+.env
+.venv
+env/
+venv/
+.tox
+
+# Editors
+.vscode/
+.idea/
+.pycharm_helpers/
+
+# Tests and coverage
+.coverage
+htmlcov/
+
+# OS related
+.DS_Store
+working-directory
+
+# Project based
 config.ini
-swarmpit_client/__pycache__
