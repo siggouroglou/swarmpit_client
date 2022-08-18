@@ -1,20 +1,33 @@
-from swarmpit_client.api_client import SwarmpitAPIClient
+import configparser
+import click
+
+from swarmpit_client.operations import SwarmpitOperation
 
 
-class SwarmpitOperation:
+@click.command()
+@click.option("-c", "--config", help="Set your config file")
+def cli_run(config):
+    if not config:
+        print("ERROR: You must specify a configuration file, using the argument '-c' or '--config'.")
+        exit(10)
 
-    def __init__(self, base_url: str, authorization: str):
-        self.swarmpit_client = SwarmpitAPIClient(base_url, authorization)
+    # Get the config ini file
+    parser = configparser.ConfigParser()
+    parser.read(config)
 
-    def update_service_version(self, service_name: str, service_data: dict):
-        service = self.swarmpit_client.service_get_by_name(service_name)
+    # Initialize an operation
+    operation = parser.get("operation", "name")
+    swarmpit_op = SwarmpitOperation(parser.get("swarmpit", "url"), parser.get("swarmpit", "auth"))
 
-        # If service not exists, create it
-        if not service:
-            service = self.swarmpit_client.service_create(service_data)
-            if service is None:
-                exit(20)
-
-        service = self.swarmpit_client.service_update(service_name, service_data)
-        if service is None:
-            exit(21)
+    # Run the requested operation
+    if operation == "update_service_version":
+        data = {
+            "repository": {
+                "name": parser.get("operation", "service_repo_name"),
+                "tag": parser.get("operation", "service_repo_tag")
+            }
+        }
+        swarmpit_op.update_service_version(parser.get("operation", "service_name"), data)
+    else:
+        print("ERROR: Not valid operation")
+        exit(11)
