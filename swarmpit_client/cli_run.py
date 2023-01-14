@@ -28,6 +28,11 @@ def cli_run(config):
             }
         }
         swarmpit_op.update_service_version(parser.get("operation", "service_name"), data)
+    elif operation == "redeploy_service":
+        swarmpit_op.redeploy_service(
+            parser.get("operation", "service_name"),
+            parser.get("operation", "service_repo_tag")
+        )
     else:
         print("ERROR: Not valid operation")
         exit(11)
