@@ -87,3 +87,24 @@ class SwarmpitAPIClient:
             if d["serviceName"] == service_name:
                 return d
         return None
+
+    def service_redeploy(self, service_name: str, tag_new: dict) -> Optional[dict]:
+        # Get the service from swarmpit
+        service = self.service_get_by_name(service_name)
+        if service is None:
+            return None
+
+        # Update the service in swarmpit
+        headers = {
+            "authorization": self.authorization,
+            "Content-Type": "application/json; charset=utf-8;"
+        }
+        r = requests.post(f"{self.url}/services/{service['id']}/redeploy?tag={tag_new}", headers=headers)
+
+        # Success
+        if r.status_code == 202:
+            return service
+
+        # Not success
+        print(f"ERROR - service_redeploy - Status: {r.status_code}, Body: {r.text}")
+        return None

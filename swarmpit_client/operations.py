@@ -18,3 +18,8 @@ class SwarmpitOperation:
         service = self.swarmpit_client.service_update(service_name, service_data)
         if service is None:
             exit(21)
+
+    def redeploy_service(self, service_name: str, service_tag: str):
+        service = self.swarmpit_client.service_redeploy(service_name, service_tag)
+        if service is None:
+            exit(21)
