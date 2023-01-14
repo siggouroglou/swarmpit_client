@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.3] - 14/01/2023
+### Added
+- LICENCE: has been added
+### Update
+- restructure code
+- readme and .gitignore updated
+### Fixed
+- swarmpit_client: update of a service without network aliases fix
+
 ## [1.0.2] - 14/08/2022
 ### Fixed
 - swarmpit_client: update mount option fix
@@ -21,8 +30,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 
-[Unreleased]: https://github.com/siggouroglou/swarmpit_client-/compare/1.0.2...develop
+[Unreleased]: https://github.com/siggouroglou/swarmpit_client-/compare/1.0.3...develop
 
+[1.0.3]: https://github.com/siggouroglou/swarmpit_client-/compare/1.0.2...1.0.3
 [1.0.2]: https://github.com/siggouroglou/swarmpit_client-/compare/1.0.1...1.0.2
 [1.0.1]: https://github.com/siggouroglou/swarmpit_client-/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/siggouroglou/swarmpit_client-/compare/0.0.0...1.0.0
