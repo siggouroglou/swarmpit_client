@@ -55,6 +55,8 @@ class SwarmpitAPIClient:
             del m["id"]
             del m["volumeOptions"]
             del m["stack"]
+        if service["networks"][0]["serviceAliases"] is None:
+            del service["networks"][0]["serviceAliases"]
         service["mounts"] = mounts
 
         # Update the service in swarmpit
