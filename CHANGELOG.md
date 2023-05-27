@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.5] - 27/05/2023
+### Updated
+- swarmpit_client: show an error on service_list when unauthorized
+
 ## [1.0.4] - 14/01/2023
 ### Added
 - swarmpit_client: redeploy operation added
@@ -34,8 +38,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 
-[Unreleased]: https://github.com/siggouroglou/swarmpit_client-/compare/1.0.4...develop
+[Unreleased]: https://github.com/siggouroglou/swarmpit_client-/compare/1.0.5...develop
 
+[1.0.5]: https://github.com/siggouroglou/swarmpit_client-/compare/1.0.4...1.0.5
 [1.0.4]: https://github.com/siggouroglou/swarmpit_client-/compare/1.0.3...1.0.4
 [1.0.3]: https://github.com/siggouroglou/swarmpit_client-/compare/1.0.2...1.0.3
 [1.0.2]: https://github.com/siggouroglou/swarmpit_client-/compare/1.0.1...1.0.2

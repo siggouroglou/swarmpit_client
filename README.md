@@ -31,7 +31,7 @@ cli_run -> operations -> api_client
 
 This project uses `git` version control system and
 [Git Flow workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).  
-Basically, there are two branches in use, `master` and `develop`.  
-Branch `master` contains the production version of the tool, while `develop` branch contains the work in progress.  
+Basically, there are two branches in use, `main` and `develop`.  
+Branch `main` contains the production version of the tool, while `develop` branch contains the work in progress.  
 If more developers work on this project, it is a good practice to create a branch per feature/work in progress,
 on top of the `develop` branch.
