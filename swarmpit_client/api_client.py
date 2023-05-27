@@ -80,6 +80,9 @@ class SwarmpitAPIClient:
             "Content-Type": "application/json; charset=utf-8;"
         }
         r = requests.get(f"{self.url}/services", headers=headers)
+        if r.status_code == 401:
+            print(f"ERROR - service_list - Status: {r.status_code}, Body: {r.text}")
+            exit(10)
         return r.json()
 
     def service_get_by_name(self, service_name) -> Optional[dict]:
@@ -99,7 +102,8 @@ class SwarmpitAPIClient:
             "authorization": self.authorization,
             "Content-Type": "application/json; charset=utf-8;"
         }
-        r = requests.post(f"{self.url}/services/{service['id']}/redeploy?tag={tag_new}", headers=headers)
+        url = f"{self.url}/services/{service['id']}/redeploy?tag={tag_new}"
+        r = requests.post(url, headers=headers)
 
         # Success
         if r.status_code == 202:
